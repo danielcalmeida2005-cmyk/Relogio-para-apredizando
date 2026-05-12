@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="projeto.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div id="marca">
+                <i class="fa-regular fa-clock"></i>
+
+                <h2> Relogio</h2>
+            </div>
+            <div id="menu">
+
+                <a href="../relogio/index.html" class="menu-interativo">Relogio</a>
+                <a href="../Cronomentro/index.html"menu-interativo">Cronometro</a>
+                <a href="../temporizador/index.html" class="menu-interativo">Temporizando</a>
+            </div>
+
+        </nav>
+        <div id="icon">
+            <a id="alteracor" href=""><i class="fa-solid fa-moon" ></i></a>
+            <a href=""><i class="fa-solid fa-gear"></i></a>
+            <a href=""></a>
+        </div>
+    </header>
+
+    <!-- area de segunda pagina interna da pagina central -->
+
+
+
+    <main>
+        <section id="caixa-relogio">
+            <div id="horas-maior">
+                <span id="horas">00</span>
+                <span id="minutos">00</span>
+                <span id="segundos">00</span>
+            </div>
+            <div id="hora-menor">
+                <div id="caixa-hora" class="caixa-menor">
+                    <span class="tempo">DIA</span>
+                    <span id="horas-menor">00</span>
+                </div>
+                <div id="caixa-minuto" class="caixa-menor">
+                    <span class="tempo">MES</span>
+                    <span id="minutos-menor">00</span>
+                </div>
+                <div id="caixa-segundo" class="caixa-menor">
+                    <span class="tempo">ANO</span>
+                    <span id="segundos-menor">00</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="status-de-tarefas">
+            <div id="status">
+                <div id="frase">
+
+                    <h2 id="texto-h2">Foco no dia</h2>
+                    <p id="texto-p">paragrafo de exemplo</p>
+
+                </div>
+                <div id="progress">
+                    <p>progresso</p>
+                    <progress id="valodoprogress" value="0" max="10"></progress>
+                </div>
+            </div>
+
+            <div id="info-tarefas">
+
+                <button id="caixa-conluidas">
+                    <i class="fa-solid fa-check circulo"></i>
+                    <div id="numero-tarefas">
+                        <p>tarefas concluidas</p>
+                        <h2 id="concluida">0</h2>
+                    </div>
+                </button>
+
+
+
+                <button id="caixa-infor">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <div id="meta-dia">
+                        <p>meta do dia</p>
+                        <h2 id="numeroDeMeta">0</h2>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer id="mais-info">
+        <section class="caixa-de-mais">
+            <h2>Bem-vindo</h2>
+            <p>use o relogio para nunca se atrasa</p>
+            <a href="">Saiba mais</a>
+        </section>
+
+        <section id="tarefa">
+
+
+
+        </section>
+
+
+    </footer>
+
+
+    <div id="adiciona-tarefa">
+        <div class="modal">
+            <h2>Suas tarefas</h2>
+
+            <div class="input-das-tarefas">
+                <input type="text" placeholder="Título" id="titulo">
+                <input type="text" placeholder="Tarefa" id="tarefas">
+            </div>
+
+            <button id="Adicionar">Adicionar</button>
+        </div>
+    </div>
+    <!-- fim -->
+
+    <!-- remover tarefas -->
+    <div id="caixadeopcoes">
+        <h1>Suas opcoes</h1>
+        <div id="opcoes">
+            <button id="botaoazul"> concluida</button>
+            <button id="botaovermelho">remover</button>
+        </div>
+
+
+        <script src="projeto.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a; /* fundo escuro */
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#tempo {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tempos {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90px;
+}
+
+.tempos span:first-child {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.tempos span:last-child {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.controle {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+@keyframes tremer {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.treme {
+  animation: tremer 0.3s;
+}
+
+input, select {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+.erro {
+  color: red;
+  border: 1px solid red;
+}
+
+.erro::placeholder {
+  color: red;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #22c55e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #16a34a;
+}

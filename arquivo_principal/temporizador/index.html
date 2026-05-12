@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Temporizador</title>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Temporizador</h1>
+<div id="tempo">
+  <div id="dias" class="tempos">
+    <span id="dias-numero">00</span>
+    <span>Dias</span>
+  </div>
+
+  <div id="horas" class="tempos">
+    <span id="horas-numero">00</span>
+    <span>Horas</span>
+  </div>
+
+  <div id="minutos" class="tempos">
+    <span id="minutos-numero">00</span>
+    <span>Minutos</span>
+  </div>
+
+  <div id="segundos" class="tempos">
+    <span id="segundos-numero">00</span>
+    <span>Segundos</span>
+  </div> 
+</div>
+      
+    </div>
+
+    <div class="controle">
+      <input type="number" id="valor" placeholder="Digite o tempo">
+      
+      <select id="unidade">
+        <option value="segundos">Segundos</option>
+        <option value="minutos">Minutos</option>
+        <option value="horas">Horas</option>
+        <option value="dias">Dias</option>
+      </select>
+
+      <button id="adicionar">Adicionar</button>
+    </div>
+  </div>
+
+  <script src="temporizando.js"></script>
+</body>
+</html>

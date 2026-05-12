@@ -1,0 +1,75 @@
+/* RESET BÁSICO */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+/* CORPO DA PÁGINA */
+body {
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(135deg, #0f172a, #1e3a8a);
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+}
+
+/* CAIXA PRINCIPAL */
+#caixa-relogio {
+background-color: rgba(0, 0, 0, 0.4);
+padding: 30px 40px;
+border-radius: 15px;
+backdrop-filter: blur(10px);
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+text-align: center;
+}
+
+/* RELÓGIO GRANDE */
+#horas-maior {
+font-size: 3rem;
+letter-spacing: 3px;
+margin-bottom: 20px;
+}
+
+/* ESPAÇAMENTO ENTRE HORAS, MINUTOS E SEGUNDOS */
+#horas-maior span {
+margin: 0 5px;
+}
+
+/* PARTE DE BAIXO */
+#hora-menor {
+display: flex;
+gap: 15px;
+justify-content: center;
+}
+
+/* CAIXAS MENORES */
+.caixa-menor {
+background-color: rgba(255, 255, 255, 0.1);
+padding: 10px 15px;
+border-radius: 10px;
+width: 80px;
+}
+
+/* TEXTO (DIA, MES, ANO) */
+.tempo {
+font-size: 0.8rem;
+color: #94a3b8;
+display: block;
+}
+
+/* NÚMEROS MENORES */
+.caixa-menor span:last-child {
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+/* EFEITO HOVER */
+.caixa-menor:hover {
+background-color: #3b82f6;
+transform: translateY(-3px);
+transition: 0.3s;
+}
