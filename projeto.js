@@ -1,3 +1,49 @@
+
+// atribuicao de imagens
+
+let botaoIngren = document.querySelector(".fa-gear")
+let container = document.querySelector("#container")
+botaoIngren.addEventListener("click", function () {
+
+
+ container.classList.toggle("ativafotos");
+
+
+})
+
+let imagens = document.querySelectorAll(".opcoes img")
+
+imagens.forEach(function(imagem){
+
+    imagem.addEventListener("click", function(){
+
+        let fundo = imagem.src
+
+        document.body.style.backgroundImage = `url(${fundo})`
+
+        document.body.style.backgroundSize = "cover"
+
+        document.body.style.backgroundPosition = "center"
+
+        document.body.style.backgroundRepeat = "no-repeat"
+
+        document.body.classList.add("fundo-ativo")
+
+    })
+
+})
+
+
+let reset = document.querySelector(".reset")
+
+reset.addEventListener("click", function(){
+
+    document.body.style.backgroundImage = "none"
+
+    document.body.classList.remove("fundo-ativo")
+
+})
+
 // RELÓGIO
 let horas = document.getElementById("horas")
 let minutos = document.getElementById("minutos")
@@ -30,8 +76,10 @@ setInterval(function () {
     minutosmenor.textContent = mes
     segundosmenor.textContent = ano
 
-}, 1000)
+ 
 
+}, 1000)
+ 
 
 // ABRIR/FECHAR MODAL
 const botao = document.getElementById("caixa-infor");

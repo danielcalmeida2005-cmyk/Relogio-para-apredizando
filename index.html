@@ -1,149 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="projeto.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>Relógio</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="projeto.css">
 </head>
 
 <body>
+
     <header>
 
         <nav>
+
             <div id="marca">
                 <i class="fa-regular fa-clock"></i>
 
-                <h2> Relogio</h2>
+                <h2>Relógio</h2>
             </div>
-            <div id="menu">
 
-                <a href="relogio-secundario/index.html" class="menu-interativo">Relogio</a>
-                <a href="Cronomentro/index.html" class="menu-interativo" >Cronometro</a>
-                <a href="temporizador/index.html" class="menu-interativo">Temporizando</a>
+            <div id="menu">
+                <a href="relogio-secundario/index.html" class="menu-interativo">
+                    Relógio
+                </a>
+
+                <a href="Cronomentro/index.html" class="menu-interativo">
+                    Cronômetro
+                </a>
+
+                <a href="temporizador/index.html" class="menu-interativo">
+                    Temporizador
+                </a>
             </div>
 
         </nav>
+
         <div id="icon">
-            <a id="alteracor" href=""><i class="fa-solid fa-moon" ></i></a>
-            <a href=""><i class="fa-solid fa-gear"></i></a>
-            <a href=""></a>
+            <button id="configuracao">
+                <i class="fa-solid fa-gear"></i>
+            </button>
         </div>
+
     </header>
 
-    <!-- area de segunda pagina interna da pagina central -->
-
-
+    <!-- MAIN -->
 
     <main>
+
+        <!-- RELÓGIO -->
+
         <section id="caixa-relogio">
+
             <div id="horas-maior">
                 <span id="horas">00</span>
                 <span id="minutos">00</span>
                 <span id="segundos">00</span>
             </div>
+
             <div id="hora-menor">
+
                 <div id="caixa-hora" class="caixa-menor">
                     <span class="tempo">DIA</span>
                     <span id="horas-menor">00</span>
                 </div>
+
                 <div id="caixa-minuto" class="caixa-menor">
-                    <span class="tempo">MES</span>
+                    <span class="tempo">MÊS</span>
                     <span id="minutos-menor">00</span>
                 </div>
+
                 <div id="caixa-segundo" class="caixa-menor">
                     <span class="tempo">ANO</span>
                     <span id="segundos-menor">00</span>
                 </div>
+
             </div>
+
         </section>
 
+        <!-- STATUS -->
 
         <section id="status-de-tarefas">
+
             <div id="status">
+
                 <div id="frase">
-
                     <h2 id="texto-h2">Foco no dia</h2>
-                    <p id="texto-p">paragrafo de exemplo</p>
 
+                    <p id="texto-p">
+                        Parágrafo de exemplo
+                    </p>
                 </div>
+
                 <div id="progress">
-                    <p>progresso</p>
+                    <p>Progresso</p>
+
                     <progress id="valodoprogress" value="0" max="10"></progress>
                 </div>
+
             </div>
+
+            <!-- INFO -->
 
             <div id="info-tarefas">
 
                 <button id="caixa-conluidas">
+
                     <i class="fa-solid fa-check circulo"></i>
+
                     <div id="numero-tarefas">
-                        <p>tarefas concluidas</p>
+                        <p>Tarefas concluídas</p>
+
                         <h2 id="concluida">0</h2>
                     </div>
+
                 </button>
-
-
 
                 <button id="caixa-infor">
+
                     <i class="fa-regular fa-calendar-check"></i>
+
                     <div id="meta-dia">
-                        <p>meta do dia</p>
+                        <p>Meta do dia</p>
+
                         <h2 id="numeroDeMeta">0</h2>
                     </div>
-                </button>
-            </div>
-        </section>
 
+                </button>
+
+            </div>
+
+        </section>
 
     </main>
 
+    <!-- FOOTER -->
+
     <footer id="mais-info">
+
         <section class="caixa-de-mais">
+
             <h2>Bem-vindo</h2>
-            <p>use o relogio para nunca se atrasa</p>
+
+            <p>
+                Use o relógio para nunca se atrasar
+            </p>
+
             <a href="">Saiba mais</a>
-        </section>
-
-        <section id="tarefa">
-
-
 
         </section>
 
+        <section id="tarefa"></section>
 
     </footer>
 
+    <!-- MODAL TAREFAS -->
 
     <div id="adiciona-tarefa">
+
         <div class="modal">
+
             <h2>Suas tarefas</h2>
 
             <div class="input-das-tarefas">
-                <input type="text" placeholder="Título" id="titulo">
-                <input type="text" placeholder="Tarefa" id="tarefas">
+
+                <input type="text"
+                    placeholder="Título"
+                    id="titulo">
+
+                <input type="text"
+                    placeholder="Tarefa"
+                    id="tarefas">
+
             </div>
 
-            <button id="Adicionar">Adicionar</button>
+            <button id="Adicionar">
+                Adicionar
+            </button>
+
         </div>
+
     </div>
-    <!-- fim -->
 
-    <!-- remover tarefas -->
+    <!-- OPÇÕES -->
+
     <div id="caixadeopcoes">
-        <h1>Suas opcoes</h1>
+
+        <h1>Suas opções</h1>
+
         <div id="opcoes">
-            <button id="botaoazul"> concluida</button>
-            <button id="botaovermelho">remover</button>
+
+            <button id="botaoazul">
+                Concluída
+            </button>
+
+            <button id="botaovermelho">
+                Remover
+            </button>
+
         </div>
 
+    </div>
 
-        <script src="projeto.js"></script>
+    <!-- TEMAS -->
+
+    <div id="container">
+
+        <div class="opcoes">
+            <p>Batman</p>
+
+            <img src="https://i.pinimg.com/1200x/3c/2a/e7/3c2ae7d209bcf3bf88f7d4fbbf7b35e0.jpg"
+                alt="Batman">
+        </div>
+
+        <div class="opcoes">
+            <p>Amigo da vizinhança</p>
+
+            <img src="https://i.pinimg.com/1200x/7b/2e/31/7b2e31e6fe2807adc21e19cf656a245c.jpg"
+                alt="Homem-Aranha">
+        </div>
+
+        <div class="opcoes">
+            <p>Deadpool</p>
+
+            <img src="https://i.pinimg.com/1200x/2f/54/d7/2f54d764f6271a4a3216cba0ce958912.jpg"
+                alt="Deadpool">
+        </div>
+
+        <div class="opcoes">
+            <p>Homem de Ferro</p>
+
+            <img src="https://i.pinimg.com/1200x/71/fc/ef/71fcef3b75943ce0101f308aacf7b24d.jpg"
+                alt="Homem de Ferro">
+        </div>
+
+        <div class="opcoes">
+            <p>Gato gamer</p>
+
+            <img src="https://i.pinimg.com/736x/82/92/d7/8292d7783cec70bd9e0671f9230eb1c0.jpg"
+                alt="Gato gamer">
+        </div>
+        
+        <div >
+       <button class="reset">Reset</button>
+        </div>
+
+    </div>
+
+    <script src="projeto.js"></script>
+
 </body>
 
 </html>
