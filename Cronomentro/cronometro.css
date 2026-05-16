@@ -5,6 +5,7 @@
 }
 
 body{
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,9 +20,11 @@ body{
 }
 
 #stopwatch{
+    
     background-color: #1e3a8a;
     padding: 2rem;
     border-radius: 10px;
+  
 }
 
 #timer{
