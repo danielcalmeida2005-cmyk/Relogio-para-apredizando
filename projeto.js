@@ -1,138 +1,222 @@
+// ========================================
+// MENU MOBILE
+// ========================================
 
-// atribuicao de imagens
+const div = document.createElement("div");
+div.className = "opcoesdemenumobile";
 
-let botaoIngren = document.querySelector(".fa-gear")
-let container = document.querySelector("#container")
-botaoIngren.addEventListener("click", function () {
+const buttonmenu = document.createElement("button");
+buttonmenu.className = "imagem";
+buttonmenu.textContent = "Tema";
 
+div.appendChild(buttonmenu);
 
- container.classList.toggle("ativafotos");
+const links = [
+    "Relogio",
+    "Cronometro",
+    "Temporizador"
+];
 
+links.forEach(texto => {
 
-})
+    const a = document.createElement("a");
 
-let imagens = document.querySelectorAll(".opcoes img")
+    a.textContent = texto;
+    a.href = "#";
+    a.className = "animacao";
 
-imagens.forEach(function(imagem){
+    div.appendChild(a);
 
-    imagem.addEventListener("click", function(){
+});
 
-        let fundo = imagem.src
-
-        document.body.style.backgroundImage = `url(${fundo})`
-
-        document.body.style.backgroundSize = "cover"
-
-        document.body.style.backgroundPosition = "center"
-
-        document.body.style.backgroundRepeat = "no-repeat"
-
-        document.body.classList.add("fundo-ativo")
-
-    })
-
-})
+document.body.appendChild(div);
 
 
-let reset = document.querySelector(".reset")
+// ========================================
+// ENGRENAGEM
+// ========================================
 
-reset.addEventListener("click", function(){
+const botaodaengrenagem = document.getElementById("configuracao");
+const engrenagem = document.querySelector("#configuracao i");
 
-    document.body.style.backgroundImage = "none"
+let girou = false;
 
-    document.body.classList.remove("fundo-ativo")
+botaodaengrenagem.addEventListener("click", () => {
 
-})
+    engrenagem.classList.remove("esquerda");
+    engrenagem.classList.remove("direita");
 
+    void engrenagem.offsetWidth;
+
+    if (!girou) {
+        engrenagem.classList.add("esquerda");
+    } else {
+        engrenagem.classList.add("direita");
+    }
+
+    girou = !girou;
+
+    div.classList.toggle("ativamenumobile");
+
+    if (div.classList.contains("ativamenumobile")) {
+        container.classList.remove("ativafotos");
+    }
+
+});
+
+
+// ========================================
+// TEMA / FUNDOS
+// ========================================
+
+const container = document.querySelector("#container");
+
+buttonmenu.addEventListener("click", () => {
+
+    container.classList.toggle("ativafotos");
+
+    if (container.classList.contains("ativafotos")) {
+        div.classList.remove("ativamenumobile");
+    }
+
+});
+
+const imagens = document.querySelectorAll(".opcoes img");
+
+imagens.forEach(function (imagem) {
+
+    imagem.addEventListener("click", function () {
+
+        let fundo = imagem.src;
+
+        document.body.style.backgroundImage = `url(${fundo})`;
+
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "no-repeat";
+
+        document.body.classList.add("fundo-ativo");
+
+    });
+
+});
+
+const reset = document.querySelector(".reset");
+
+reset.addEventListener("click", function () {
+
+    document.body.style.backgroundImage = "none";
+
+    document.body.classList.remove("fundo-ativo");
+
+});
+
+
+// ========================================
 // RELÓGIO
-let horas = document.getElementById("horas")
-let minutos = document.getElementById("minutos")
-let segundos = document.getElementById("segundos")
+// ========================================
 
-let horasmenor = document.getElementById("horas-menor")
-let minutosmenor = document.getElementById("minutos-menor")
-let segundosmenor = document.getElementById("segundos-menor")
+const horas = document.getElementById("horas");
+const minutos = document.getElementById("minutos");
+const segundos = document.getElementById("segundos");
+
+const horasmenor = document.getElementById("horas-menor");
+const minutosmenor = document.getElementById("minutos-menor");
+const segundosmenor = document.getElementById("segundos-menor");
 
 setInterval(function () {
-    let today = new Date()
 
-    let hr = today.getHours()
-    let min = today.getMinutes()
-    let seg = today.getSeconds()
+    let today = new Date();
 
-    if (hr < 10) hr = '0' + hr
-    if (min < 10) min = '0' + min
-    if (seg < 10) seg = '0' + seg
+    let hr = today.getHours();
+    let min = today.getMinutes();
+    let seg = today.getSeconds();
 
-    horas.textContent = hr
-    minutos.textContent = ':' + min
-    segundos.textContent = ':' + seg
+    if (hr < 10) hr = '0' + hr;
+    if (min < 10) min = '0' + min;
+    if (seg < 10) seg = '0' + seg;
 
-    let dia = today.getDate()
-    let mes = today.getMonth() + 1
-    let ano = today.getFullYear()
+    horas.textContent = hr;
+    minutos.textContent = ':' + min;
+    segundos.textContent = ':' + seg;
 
-    horasmenor.textContent = dia
-    minutosmenor.textContent = mes
-    segundosmenor.textContent = ano
+    let dia = today.getDate();
+    let mes = today.getMonth() + 1;
+    let ano = today.getFullYear();
 
- 
+    horasmenor.textContent = dia;
+    minutosmenor.textContent = mes;
+    segundosmenor.textContent = ano;
 
-}, 1000)
- 
+}, 1000);
 
-// ABRIR/FECHAR MODAL
+
+// ========================================
+// MODAL
+// ========================================
+
 const botao = document.getElementById("caixa-infor");
 const tarefa = document.getElementById("adiciona-tarefa");
 
 botao.addEventListener("click", () => {
+
     tarefa.classList.toggle("ativo");
+
 });
 
 
-// INPUTS
-let titulo = document.getElementById("titulo")
-let tarefas = document.getElementById("tarefas")
+// ========================================
+// SISTEMA DE TAREFAS
+// ========================================
 
-const adicionar = document.getElementById("Adicionar")
+const titulo = document.getElementById("titulo");
+const tarefas = document.getElementById("tarefas");
 
+const adicionar = document.getElementById("Adicionar");
 
-// VARIÁVEIS GLOBAIS (IMPORTANTE)
+const botaoazul = document.getElementById("botaoazul");
+const tarefaconcluida = document.getElementById("concluida");
+
+const caixadeopcoes = document.getElementById("caixadeopcoes");
+
+const metadodia = document.getElementById("numeroDeMeta");
+
+const listaTarefas = document.getElementById("tarefa");
+
 let tarefaSelecionada = null;
+
 let contador = 0;
+let numerodemetadodia = 0;
 
-let botaoazul = document.getElementById("botaoazul")
-let tarefaconcluida = document.getElementById("concluida")
-let caixadeopcoes = document.getElementById("caixadeopcoes")
-
-let metadodia = document.getElementById("numeroDeMeta")
-let numerodemetadodia = 0
-// ADICIONAR TAREFA
 adicionar.addEventListener("click", () => {
+
     if (titulo.value == '' || tarefas.value == '') {
 
         titulo.classList.add("treme");
         tarefas.classList.add("treme");
 
         setTimeout(() => {
+
             titulo.classList.remove("treme");
             tarefas.classList.remove("treme");
+
         }, 300);
 
         return;
     }
 
     criaLista();
+
     tarefa.classList.remove("ativo");
+
 });
 
-
-// FUNÇÃO CRIAR TAREFA
 function criaLista() {
 
     const item = document.createElement("div");
-    item.classList.add("minha-tarefa"); // ✔ sem ID duplicado
-item.id = "minha-tarefa"
+
+    item.classList.add("minha-tarefa");
+
     const h3 = document.createElement("h3");
     h3.textContent = titulo.value;
 
@@ -142,48 +226,62 @@ item.id = "minha-tarefa"
     item.appendChild(h3);
     item.appendChild(p);
 
-    numerodemetadodia++
+    listaTarefas.appendChild(item);
 
-    metadodia.textContent = numerodemetadodia
-    // aqui
+    numerodemetadodia++;
 
-    // 👇 seleciona a tarefa clicada
+    metadodia.textContent = numerodemetadodia;
+
+    atualizaprogresso();
+
     item.addEventListener("click", () => {
+
         tarefaSelecionada = item;
+
         caixadeopcoes.classList.toggle("apagaAtivo");
+
     });
 
-    document.getElementById("tarefa").appendChild(item);
-
-atualizaprogresso()
-
-    // limpa os inputs
     titulo.value = "";
     tarefas.value = "";
+
 }
 
-
-// BOTÃO CONCLUIR (FORA DA FUNÇÃO!)
 botaoazul.addEventListener("click", () => {
 
     if (tarefaSelecionada) {
+
         tarefaSelecionada.remove();
 
         contador++;
-        tarefaconcluida.textContent = contador;
-numerodemetadodia--        
-metadodia.textContent = numerodemetadodia
 
+        tarefaconcluida.textContent = contador;
+
+        numerodemetadodia--;
+
+        metadodia.textContent = numerodemetadodia;
 
         tarefaSelecionada = null;
+
         caixadeopcoes.classList.remove("apagaAtivo");
-        atualizaprogresso()
+
+        atualizaprogresso();
+
     }
 
 });
 
-let valordoprogress = document.getElementById("valodoprogress")
-function atualizaprogresso(){
-   valordoprogress.max = numerodemetadodia
-   valordoprogress.value = contador
+
+// ========================================
+// PROGRESSO
+// ========================================
+
+const valordoprogress = document.getElementById("valodoprogress");
+
+function atualizaprogresso() {
+
+    valordoprogress.max = numerodemetadodia;
+
+    valordoprogress.value = contador;
+
 }
