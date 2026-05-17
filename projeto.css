@@ -652,8 +652,8 @@ img{
 
 .opcoesdemenumobile{
    position: fixed;
-   top: 2.7%;
-   left: 50%;
+   top: 4%;
+   left: 42%;
    transform: translate(-50%, -50%);
    background: linear-gradient(to right, #7C3AED, #2563EB);
    display: none;
@@ -727,8 +727,8 @@ img{
     background: #111827;
     border-radius: 18px;
     position: fixed;
-    top: 30%;
-    left: 85%;
+    top: 45%;
+    left: 80%;
     transform: translate(-50%, -50%);
     display: none;
     flex-direction: column;
