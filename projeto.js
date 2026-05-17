@@ -35,7 +35,7 @@ document.body.appendChild(div);
 // ========================================
 // ENGRENAGEM
 // ========================================
-
+const container = document.querySelector("#container");
 const botaodaengrenagem = document.getElementById("configuracao");
 const engrenagem = document.querySelector("#configuracao i");
 
@@ -56,30 +56,34 @@ botaodaengrenagem.addEventListener("click", () => {
 
     girou = !girou;
 
+    // abre/fecha menu mobile
     div.classList.toggle("ativamenumobile");
 
-    if (div.classList.contains("ativamenumobile")) {
-        container.classList.remove("ativafotos");
-    }
-
+    // se abrir menu, fecha fotos
+   
 });
 
+botaodaengrenagem.addEventListener("click",()=>{
+    container.classList.toggle("ativafotos")
+ container.classList.remove("ativafotosmobile");
+ 
+})
 
-// ========================================
-// TEMA / FUNDOS
-// ========================================
+botaodaengrenagem.addEventListener("click",()=>{
 
-const container = document.querySelector("#container");
+ if (div.classList.contains("opcoesdemenumobile")) {
+        container.classList.remove("ativafotosmobile");
+         container.classList.remove("ativafotos")
+    }  
+  
+})
 
-buttonmenu.addEventListener("click", () => {
+buttonmenu.addEventListener("click",()=>{
+    container.classList.toggle("ativafotosmobile");
+    div.classList.remove("ativamenumobile")
+})
 
-    container.classList.toggle("ativafotos");
 
-    if (container.classList.contains("ativafotos")) {
-        div.classList.remove("ativamenumobile");
-    }
-
-});
 
 const imagens = document.querySelectorAll(".opcoes img");
 
@@ -96,6 +100,7 @@ imagens.forEach(function (imagem) {
         document.body.style.backgroundRepeat = "no-repeat";
 
         document.body.classList.add("fundo-ativo");
+
 
     });
 
