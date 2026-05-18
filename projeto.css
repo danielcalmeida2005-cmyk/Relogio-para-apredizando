@@ -41,13 +41,14 @@ nav{
 
 display: flex;
 align-items: center;
+
 gap: 30px;
 width: 100%;}
 
 #menu{
     display: flex;
     gap: 10px;
-
+align-items: center;
 }
 
 
@@ -497,7 +498,7 @@ footer{
   animation: tremer 0.3s;
 }
 
-#caixadeopcoes {
+#caixadeopcoes  {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -581,7 +582,7 @@ footer{
     box-shadow: 0px 8px 25px rgba(0,0,0,0.35);
 }
 
-#container.ativafotos{
+#container.ativafotosweb{
     display: flex;
 }
 

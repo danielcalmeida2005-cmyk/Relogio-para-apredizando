@@ -31,6 +31,8 @@ links.forEach(texto => {
 
 document.body.appendChild(div);
 
+// Fotos mobiles 
+
 
 // ========================================
 // ENGRENAGEM
@@ -57,31 +59,70 @@ botaodaengrenagem.addEventListener("click", () => {
     girou = !girou;
 
     // abre/fecha menu mobile
-    div.classList.toggle("ativamenumobile");
+  if (window.innerWidth <= 768) {
+
+        div.classList.toggle("ativamenumobile");
+
+        container.classList.remove("ativafotosmobile");
+        container.classList.remove("ativafotosweb");
+
+    }
+
+    // WEB
+    else {
+
+        div.classList.remove("ativamenumobile");
+
+        container.classList.toggle("ativafotosweb");
+
+    }
 
     // se abrir menu, fecha fotos
    
 });
 
-botaodaengrenagem.addEventListener("click",()=>{
-    container.classList.toggle("ativafotos")
- container.classList.remove("ativafotosmobile");
- 
-})
+function removermobile(){
 
-botaodaengrenagem.addEventListener("click",()=>{
+    div.classList.remove("ativamenumobile");
 
- if (div.classList.contains("opcoesdemenumobile")) {
-        container.classList.remove("ativafotosmobile");
-         container.classList.remove("ativafotos")
-    }  
+    container.classList.remove("ativafotosmobile");
+
+}
+
+function removerweb(){
   
-})
+       container.classList.remove("ativafotosweb") 
+    
+   
+ 
+}
 
-buttonmenu.addEventListener("click",()=>{
-    container.classList.toggle("ativafotosmobile");
-    div.classList.remove("ativamenumobile")
-})
+buttonmenu.addEventListener("click", () => {
+
+   
+    div.classList.remove("ativamenumobile");
+
+    // MOBILE
+    if (window.innerWidth <= 768) {
+
+        removerweb();
+
+        container.classList.toggle("ativafotosmobile");
+
+    } 
+    
+    // WEB
+    else {
+
+        removermobile();
+
+        container.classList.toggle("ativafotosweb");
+
+    }
+
+
+
+});
 
 
 
@@ -105,6 +146,15 @@ imagens.forEach(function (imagem) {
     });
 
 });
+
+imagens.forEach((imagem) => {
+
+    imagem.addEventListener("click", () => {
+
+        container.classList.remove("ativafotosmobile");
+        container.classList.remove("ativafotosweb") 
+
+    });})
 
 const reset = document.querySelector(".reset");
 
