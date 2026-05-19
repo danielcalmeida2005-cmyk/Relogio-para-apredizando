@@ -12,17 +12,26 @@ buttonmenu.textContent = "Tema";
 div.appendChild(buttonmenu);
 
 const links = [
-    "Relogio",
-    "Cronometro",
-    "Temporizador"
+    {
+        texto: "Relogio",
+        link: "relogio-secundario/index.html"
+    },
+    {
+        texto: "Cronometro",
+        link: "Cronomentro/index.html"
+    },
+    {
+        texto: "Temporizador",
+        link: "temporizador/index.html"
+    }
 ];
 
-links.forEach(texto => {
+links.forEach(item => {
 
     const a = document.createElement("a");
 
-    a.textContent = texto;
-    a.href = "#";
+    a.textContent = item.texto;
+    a.href = item.link;
     a.className = "animacao";
 
     div.appendChild(a);
@@ -56,14 +65,12 @@ botaodaengrenagem.addEventListener("click", () => {
         engrenagem.classList.add("direita");
     }
 
-    girou = !girou;
+   
 
     // abre/fecha menu mobile
   if (window.innerWidth <= 768) {
 
         div.classList.toggle("ativamenumobile");
-
-        container.classList.remove("ativafotosmobile");
         container.classList.remove("ativafotosweb");
 
     }
